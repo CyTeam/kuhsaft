@@ -15,9 +15,11 @@
       #toolbar
     .container.cms
       .row
-        .span12
+        .col-md-12
           = render 'content_language_switch'
           = render 'flash', :flash => flash
+      .row
+        .col-md-12
           = yield
 
     = javascript_include_tag 'kuhsaft/cms/application.js'
