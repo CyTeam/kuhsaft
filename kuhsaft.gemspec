@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'mini_magick' # , '>= 3.4'
   s.add_dependency 'rdiscount' # , '>= 1.6'
   s.add_dependency 'ancestry'
-  s.add_dependency 'bootstrap-sass', '2.3.2.2'
+  s.add_dependency 'bootstrap-sass', '~> 3.2.0.2'
   s.add_dependency 'ckeditor_rails', '4.2'
   s.add_dependency 'pg_search'
   s.add_dependency 'htmlentities'
