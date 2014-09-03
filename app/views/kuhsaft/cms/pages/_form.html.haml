@@ -8,17 +8,17 @@
 .tab-content
   #page-metadata.tab-pane{ class: metadata_tab_active(page) }
     = simple_form_for page, url: url, html: { class: 'form-horizontal' }, wrapper: :bootstrap do |form|
-      = form.input :title, required: false, input_html: { class: :span5 }
-      = form.input :slug, required: false, input_html: { class: :span5 }
-      = form.input :page_title, required: false, input_html: { class: :span5 }
-      = form.input :parent_id, collection: Kuhsaft::Page.flat_tree, label_method: :nesting_name, selected: params[:parent_id].presence || page.parent_id.presence, prompt: t('.none'), input_html: { class: :span3 }
-      = form.input :page_type, collection: Kuhsaft::PageType.all, prompt: false, default: Kuhsaft::PageType::CONTENT, input_html: { class: :span3 }
+      = form.input :title, required: false, input_html: { class: 'col-md-5' }
+      = form.input :slug, required: false, input_html: { class: 'col-md-5' }
+      = form.input :page_title, required: false, input_html: { class: 'col-md-5' }
+      = form.input :parent_id, collection: Kuhsaft::Page.flat_tree, label_method: :nesting_name, selected: params[:parent_id].presence || page.parent_id.presence, prompt: t('.none'), input_html: { class: 'col-md-3' }
+      = form.input :page_type, collection: Kuhsaft::PageType.all, prompt: false, default: Kuhsaft::PageType::CONTENT, input_html: { class: 'col-md-3' }
       = form.input :redirect_url, as: :string
       = form.input :url, as: :string, input_html: { disabled: 'disabled' }
-      = form.input :keywords, input_html: { class: :span5 }, hint: t('.hint_keywords').html_safe
+      = form.input :keywords, input_html: { class: 'col-md-5' }, hint: t('.hint_keywords').html_safe
       - if page == homepage
         = form.input :google_verification_key
-      = form.input :description, as: :text, input_html: { class: :span5, rows: 4 }, hint: t('.hint_description').html_safe
+      = form.input :description, as: :text, input_html: { class: 'form-control col-md-5', rows: 4 }, hint: t('.hint_description').html_safe
       = form.input :published, as: :boolean
 
       .form-actions
